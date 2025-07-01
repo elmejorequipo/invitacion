@@ -3,50 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡La Gran Aventura de Cumpleaños de Ema Valentina!</title>
-    <meta name="description" content="¡Una misión te espera! Ayuda al capibara Valentín a llegar a la fiesta de 5 años de Ema Valentina.">
-    <link rel="canonical" href="https://ejemplo.com/invitacion-ema-valentina.html">
+    
+    <title>¡Estás invitado al cumpleaños de Ema Valentina!</title>
+    
+    <meta name="description" content="¡Aventura de Cumpleaños! Ayuda al capibara Valentín a llegar a la fiesta de 5 años de Ema Valentina. Domingo 6 de julio, 4:30 PM.">
+    
+    <link rel="canonical" href="https://elmejorequipo.github.io/invitacion/valentina">
+
     <meta property="og:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
     <meta property="og:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ejemplo.com/invitacion-ema-valentina.html">
-    <meta property="og:image" content="https://github.com/elmejorequipo/invitacion/blob/main/capibara01.png?raw=true">
+    <meta property="og:url" content="https://elmejorequipo.github.io/invitacion/valentina">
+    <meta property="og:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+    <meta property="og:site_name" content="Invitación de Cumpleaños">
+    <meta property="og:locale" content="es_LA">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
+    <meta name="twitter:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SocialEvent",
+      "name": "Fiesta de 5 años de Ema Valentina",
+      "startDate": "2025-07-06T16:30:00-04:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Domicilio en B. Villa Warnes",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "C. Alberto Ostria N° 3445",
+          "addressLocality": "Santa Cruz de la Sierra",
+          "addressCountry": "BO"
+        }
+      },
+      "image": [
+        "https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png"
+       ],
+      "description": "Ven a celebrar el cumpleaños número 5 de Ema Valentina con juegos, pastel y una divertida aventura con temática de capibaras.",
+      "organizer": {
+        "@type": "Person",
+        "name": "Ema Valentina"
+      }
+    }
+    </script>
+    
     <style>
-        :root{--bg-gradient-start:#a8e6cf;--bg-gradient-end:#dcedc1;--card-bg:#ffffff;--primary-color:#ff8b94;--secondary-color:#63d471;--accent-color:#ffcc5c;--text-color:#5d4037;--input-bg:#f1f1f1}body{font-family:'Fredoka One','Comic Sans MS',cursive;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:20px;background:linear-gradient(45deg,var(--bg-gradient-start),var(--bg-gradient-end));background-size:400% 400%;animation:gradientBG 15s ease infinite;color:var(--text-color);box-sizing:border-box;overflow-x:hidden}@keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}main.invitacion{background:var(--card-bg);border:5px solid var(--primary-color);border-radius:30px;padding:25px 35px;max-width:500px;width:100%;text-align:center;box-shadow:0 15px 30px rgba(0,0,0,0.15);position:relative;overflow:hidden;animation:fadeInCard 1s ease-out forwards}@keyframes fadeInCard{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}.invitacion::before{content:'🍃';position:absolute;top:10px;left:10px;font-size:40px;animation:wiggle 4s ease-in-out infinite}.invitacion::after{content:'☀️';position:absolute;top:15px;right:15px;font-size:40px;color:var(--accent-color);animation:spin 10s linear infinite}@keyframes wiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(10deg)}}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}h1{color:var(--primary-color);font-size:2.2em;margin:0 0 10px 0;text-shadow:2px 2px #fff8f8}h2{font-size:2em;color:var(--text-color);margin:15px 0 10px;line-height:1.1}p{font-size:1.1em;line-height:1.5}strong{color:var(--primary-color)}
-        
-        /* Estilo para la imagen del capibara */
-        .capibara-imagen {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto 15px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-            animation: bobbing 3s ease-in-out infinite;
-        }
-
-        @keyframes bobbing{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-        .capibara-imagen:hover{transform:scale(1.1) rotate(3deg);animation-play-state:paused}
-
-        .paso{transition:opacity .5s ease-out,transform .5s ease-out,max-height .8s ease-in-out;max-height:800px;opacity:1;transform:translateY(0);overflow:hidden}.paso.oculto{opacity:0;max-height:0;transform:translateY(20px);pointer-events:none}.pista{background-color:#fff9e6;color:var(--text-color);padding:15px;border-radius:15px;margin:20px 0;border:2px dashed var(--accent-color);font-size:1.1em}.opciones-container{display:flex;flex-direction:column;gap:10px;margin-top:15px}.boton-opcion,.boton-jugar{background:linear-gradient(45deg,var(--secondary-color),#81c784);color:white;padding:12px 20px;border:none;border-radius:50px;font-size:1.1em;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(0,0,0,.1)}.boton-opcion:hover,.boton-jugar:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.15)}.input-secreto{width:80%;padding:12px;border:2px solid #ddd;border-radius:10px;text-align:center;font-size:1.2em;margin-top:10px;background-color:var(--input-bg);color:var(--text-color)}.input-secreto:focus{outline:none;border-color:var(--accent-color)}#mensajeFinal{background-color:#e8f5e9;color:#388e3c;padding:20px;border-radius:15px;border:2px solid var(--secondary-color);font-size:1.2em;margin-top:20px}#music-toggle{position:fixed;bottom:15px;right:15px;width:50px;height:50px;background-color:rgba(255,255,255,0.8);border:2px solid var(--primary-color);border-radius:50%;font-size:24px;cursor:pointer;z-index:1000;display:flex;justify-content:center;align-items:center}#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
-        
-        .mapa-container {
-            margin-top: 20px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 3px solid var(--accent-color);
-        }
-
-        .mapa-container iframe {
-            width: 100%;
-            height: 300px;
-            border: 0;
-        }
-
-        @media (max-width:600px){h1{font-size:1.8em}h2{font-size:1.8em}p{font-size:1em}.capibara-imagen{width:150px;height:150px}.invitacion::before,.invitacion::after{font-size:30px}}
+        :root{--bg-gradient-start:#a8e6cf;--bg-gradient-end:#dcedc1;--card-bg:#ffffff;--primary-color:#ff8b94;--secondary-color:#63d471;--accent-color:#ffcc5c;--text-color:#5d4037;--input-bg:#f1f1f1}body{font-family:'Fredoka One','Comic Sans MS',cursive;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:20px;background:linear-gradient(45deg,var(--bg-gradient-start),var(--bg-gradient-end));background-size:400% 400%;animation:gradientBG 15s ease infinite;color:var(--text-color);box-sizing:border-box;overflow-x:hidden}@keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}main.invitacion{background:var(--card-bg);border:5px solid var(--primary-color);border-radius:30px;padding:25px 35px;max-width:500px;width:100%;text-align:center;box-shadow:0 15px 30px rgba(0,0,0,0.15);position:relative;overflow:hidden;animation:fadeInCard 1s ease-out forwards}@keyframes fadeInCard{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}.invitacion::before{content:'🍃';position:absolute;top:10px;left:10px;font-size:40px;animation:wiggle 4s ease-in-out infinite}.invitacion::after{content:'☀️';position:absolute;top:15px;right:15px;font-size:40px;color:var(--accent-color);animation:spin 10s linear infinite}@keyframes wiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(10deg)}}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}h1{color:var(--primary-color);font-size:2.2em;margin:0 0 10px 0;text-shadow:2px 2px #fff8f8}h2{font-size:2em;color:var(--text-color);margin:15px 0 10px;line-height:1.1}p{font-size:1.1em;line-height:1.5}strong{color:var(--primary-color)}.capibara-imagen{width:180px;height:180px;margin:20px auto 15px;background-size:contain;background-repeat:no-repeat;background-position:center;cursor:pointer;transition:transform .3s ease-in-out;animation:bobbing 3s ease-in-out infinite}@keyframes bobbing{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}.capibara-imagen:hover{transform:scale(1.1) rotate(3deg);animation-play-state:paused}.paso{transition:opacity .5s ease-out,transform .5s ease-out,max-height .8s ease-in-out;max-height:800px;opacity:1;transform:translateY(0);overflow:hidden}.paso.oculto{opacity:0;max-height:0;transform:translateY(20px);pointer-events:none}.pista{background-color:#fff9e6;color:var(--text-color);padding:15px;border-radius:15px;margin:20px 0;border:2px dashed var(--accent-color);font-size:1.1em;line-height:1.6}.opciones-container{display:flex;flex-direction:column;gap:10px;margin-top:15px}.boton-opcion,.boton-jugar{background:linear-gradient(45deg,var(--secondary-color),#81c784);color:white;padding:12px 20px;border:none;border-radius:50px;font-size:1.1em;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(0,0,0,.1)}.boton-opcion:hover,.boton-jugar:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.15)}.input-secreto{width:80%;padding:12px;border:2px solid #ddd;border-radius:10px;text-align:center;font-size:1.2em;margin-top:10px;background-color:var(--input-bg);color:var(--text-color)}.input-secreto:focus{outline:none;border-color:var(--accent-color)}#mensajeFinal{background-color:#e8f5e9;color:#388e3c;padding:20px;border-radius:15px;border:2px solid var(--secondary-color);font-size:1.2em;margin-top:20px}#music-toggle{position:fixed;bottom:15px;right:15px;width:50px;height:50px;background-color:rgba(255,255,255,0.8);border:2px solid var(--primary-color);border-radius:50%;font-size:24px;cursor:pointer;z-index:1000;display:flex;justify-content:center;align-items:center}#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}.mapa-container{margin-top:20px;border-radius:15px;overflow:hidden;border:3px solid var(--accent-color)}.mapa-container iframe{width:100%;height:300px;border:0}@media (max-width:600px){h1{font-size:1.8em}h2{font-size:1.8em}p{font-size:1em}.capibara-imagen{width:150px;height:150px}.invitacion::before,.invitacion::after{font-size:30px}}.popup-container{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background-color:var(--popup-bg);border:4px solid var(--popup-border);border-radius:15px;padding:20px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;display:none}.popup-message{color:var(--popup-text);font-size:1.2em;margin-bottom:15px}.popup-button{background-color:var(--secondary-color);color:white;border:none;border-radius:10px;padding:10px 20px;font-size:1em;cursor:pointer;transition:background-color 0.2s}.popup-button:hover{background-color:#59a15e}.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:1000;display:none}
     </style>
 </head>
 <body>
@@ -67,7 +74,7 @@
             <h2>Paso 1: ¡Elige el accesorio!</h2>
             <p>Valentín quiere verse genial para la fiesta. ¿Qué accesorio debería usar?</p>
             <div class="opciones-container">
-                <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Un sombrero de copa</button>
+                <button class="boton-opcion" onclick="mostrarPopup('¡No, eso no es muy de capibara! Intenta de nuevo.')">Un sombrero de copa</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('correcta')">Unas gafas de sol 🕶️</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Una corbata de moño</button>
             </div>
@@ -86,10 +93,10 @@
             <p>¡Gracias a ti, Valentín encontró el lugar de la fiesta!</p>
              <div class="pista">
                 <strong>Fecha:</strong> Domingo 6 de Julio, 4:30 PM<br>
-                <strong>Lugar:</strong> ¡Aquí te esperamos!
+                <strong>Dirección:</strong> B. Villa Warnes | C. Alberto Ostria | N° 3445
             </div>
             <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.321381283307!2d-63.181944!3d-17.783333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7f5898d2495%3A0x8f8c7f3d8f8d2495!2sPlaza%2024%20de%20Septiembre!5e0!3m2!1ses-419!2sbo!4v1678886400000!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.390595292244!2d-63.1594916!3d-17.7699313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7f6074a3f71%3A0x6a38b5f63920c85!2sAlberto%20Ostria%20Guti%C3%A9rrez%203445%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses-419!2s!4v1679948256333!5m2!1ses-419!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="mensajeFinal">
                 <p><strong>¡Te esperamos para celebrar!</strong> 🎉</p>
@@ -103,41 +110,68 @@
     </audio>
     <canvas id="confetti-canvas"></canvas>
 
+    <div id="popup" class="popup-container" style="display: none;">
+        <p id="popup-message" class="popup-message"></p>
+        <button id="popup-button" class="popup-button">Entendido</button>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
     <script>
         // --- NAVEGACIÓN DE LA AVENTURA ---
         const pasos = document.querySelectorAll('.paso');
         const capibara = document.getElementById('capibara');
+        const popupContainer = document.getElementById('popup');
+        const popupMessage = document.getElementById('popup-message');
+        const popupButton = document.getElementById('popup-button');
+        const overlay = document.getElementById('overlay');
 
         function mostrarPaso(numeroPaso) {
             pasos.forEach((paso, index) => {
-                if (index === (numeroPaso - 1)) {
-                    paso.classList.remove('oculto');
-                } else {
-                    paso.classList.add('oculto');
-                }
+                paso.classList.toggle('oculto', index !== numeroPaso - 1);
             });
         }
 
-        capibara.addEventListener('click', () => mostrarPaso(2));
+        capibara.addEventListener('click', () => {
+            mostrarPaso(2);
+            // Intentar reproducir música en la primera interacción del usuario
+            if (backgroundMusic.paused) {
+                backgroundMusic.play().catch(e => console.log("El navegador bloqueó la reproducción automática. El usuario debe activar el sonido manualmente."));
+                musicToggle.textContent = '🔇';
+            }
+        });
+
+        let siguientePaso = 0;
+        popupButton.addEventListener('click', () => {
+            popupContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            if (siguientePaso > 0) {
+                mostrarPaso(siguientePaso);
+                siguientePaso = 0;
+            }
+        });
+        
+        function mostrarPopup(mensaje, pasoSiguiente = 0) {
+            popupMessage.textContent = mensaje;
+            popupContainer.style.display = 'block';
+            overlay.style.display = 'block';
+            siguientePaso = pasoSiguiente;
+        }
 
         function revisarRespuesta(respuesta) {
             if (respuesta === 'correcta') {
-                alert('¡Excelente elección! Valentín se ve genial. ¡Vamos al siguiente paso!');
-                mostrarPaso(3);
+                mostrarPopup('¡Excelente elección! Valentín se ve genial. ¡Vamos al siguiente paso!', 3);
             } else {
-                alert('¡No, eso no es muy de capibara! Intenta de nuevo.');
+                mostrarPopup('Mmm... no creo que a Valentín le guste eso. ¡Intenta de nuevo!');
             }
         }
-
+        
         function revisarClave() {
             const claveInput = document.getElementById('inputClave');
             if (claveInput.value.trim().toLowerCase() === 'ema') {
-                alert('¡Correcto! ¡Has desbloqueado la ubicación secreta!');
-                mostrarPaso(4);
+                mostrarPopup('¡Correcto! ¡Has desbloqueado la ubicación secreta!', 4);
                 startConfetti();
-                setTimeout(stopConfetti, 6000);
             } else {
-                alert('¡Esa no es la palabra secreta! Pista: Es un nombre corto y bonito 😉');
+                mostrarPopup('¡Esa no es la palabra secreta! Pista: Es un nombre corto y bonito 😉');
             }
         }
 
@@ -148,7 +182,7 @@
 
         musicToggle.addEventListener('click', () => {
             if (backgroundMusic.paused) {
-                backgroundMusic.play().catch(e => console.log("La reproducción automática fue bloqueada por el navegador."));
+                backgroundMusic.play().catch(e => console.log("Reproducción automática bloqueada."));
                 musicToggle.textContent = '🔇';
             } else {
                 backgroundMusic.pause();
@@ -165,6 +199,7 @@
         const colors = ["#ff8b94", "#63d471", "#ffcc5c", "#a8e6cf", "#ffffff"];
 
         function startConfetti() {
+            if (confettiInterval) return; // Evita iniciar múltiples veces
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             
@@ -175,14 +210,10 @@
             confettiInterval = setInterval(drawConfetti, 1000 / 60);
         }
 
-        function stopConfetti() {
-            clearInterval(confettiInterval);
-        }
-
         function createConfetti() {
             return {
                 x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height - canvas.height,
+                y: Math.random() * -canvas.height,
                 size: Math.random() * 5 + 5,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 speed: Math.random() * 3 + 2,
@@ -206,13 +237,12 @@
                 p.y += p.speed;
                 p.angle += p.spin;
 
-                if (p.y > canvas.height) {
+                if (p.y > canvas.height + 20) {
                     confettiParticles[i] = createConfetti();
                     confettiParticles[i].y = -10;
                 }
             });
         }
     </script>
-
 </body>
 </html>
