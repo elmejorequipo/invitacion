@@ -15,7 +15,6 @@
     <meta name="twitter:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
     <meta name="twitter:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -101,32 +100,39 @@
     </div>
     
     <main class="invitacion">
-        <div id="paso1" class="paso">
+        <div id="paso1" class="paso oculto">
+            <h2>La Misión de Valentín</h2>
+            <p>En un rincón soleado del río, nuestro amigo <strong>Valentín el Capibara</strong> acaba de componer una canción muy especial para el cumpleaños de su mejor amiga, <strong>Ema</strong>.</p>
+            <p>Pero... ¡necesita tu ayuda para superar los desafíos del camino y llegar a la fiesta a tiempo!</p>
+            <button class="boton-jugar" onclick="mostrarPaso(2)">¡Vamos a ayudarlo!</button>
+        </div>
+        
+        <div id="paso2" class="paso oculto">
             <h1>Ema Valentina</h1>
             <p>¡Te invito a celebrar mis <strong>5 AÑOS</strong>!</p>
             <div class="capibara-imagen" id="capibara" role="img" aria-label="Ilustración de un capibara" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png');"></div>
-            <p><strong>¡Haz clic en Valentín para ayudarlo a llegar!</strong></p>
+            <p><strong>Haz clic en Valentín para descubrir el primer desafío.</strong></p>
         </div>
 
-        <div id="paso2" class="paso oculto">
-            <h2>Paso 1: ¡Prepara la mochila!</h2>
-            <p>Valentín quiere verse genial para la fiesta. ¿Qué accesorio debería usar?</p>
+        <div id="paso3" class="paso oculto">
+            <h2>Desafío 1: ¡Elige el accesorio!</h2>
+            <p>Para un día tan especial, Valentín necesita un look genial. ¿Qué accesorio debería usar?</p>
             <div class="opciones-container">
-                <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Un libro de matemáticas</button>
+                <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Un sombrero de copa</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('correcta')">Unos lentes de sol cool 🕶️</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Una corbata de moño</button>
             </div>
         </div>
         
-        <div id="paso3" class="paso oculto">
-            <h2>Paso 2: ¡Llegó con estilo!</h2>
+        <div id="paso4" class="paso oculto">
+            <h2>Desafío 2: ¡La Contraseña!</h2>
              <div class="capibara-imagen" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara02.png'); animation: none; cursor: default;"></div>
             <p>¡Perfecto! Ahora, para encontrar la ubicación, escribe el nombre de la cumpleañera.</p>
             <input type="text" id="inputClave" class="input-secreto" placeholder="Nombre de la cumpleañera...">
             <button class="boton-jugar" style="margin-top: 15px;" onclick="revisarClave()">Revelar Mapa</button>
         </div>
 
-        <div id="paso4" class="paso oculto">
+        <div id="paso5" class="paso oculto">
             <h2>¡Misión Cumplida!</h2>
             <p>¡Gracias a ti, Valentín encontró el lugar de la fiesta!</p>
              <div class="pista">
@@ -144,7 +150,7 @@
 
     <button id="music-toggle" class="oculto">🎵</button>
     <audio id="background-music" loop>
-        <source src="https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-897.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/Feliz%20Cumple%20Valentina.mp3" type="audio/mpeg">
     </audio>
     <canvas id="confetti-canvas"></canvas>
 
@@ -167,10 +173,10 @@
         const introOverlay = document.getElementById('intro-overlay');
         const startButton = document.getElementById('start-button');
         const invitationCard = document.querySelector('main.invitacion');
+        
         backgroundMusic.volume = 0.3;
-
         let proximoPaso = 0;
-        let isMusicPlaying = false; // Estado para controlar la música
+        let isMusicPlaying = false;
 
         // --- FUNCIONES DE NAVEGACIÓN Y JUEGO ---
         function mostrarPaso(numeroPaso) {
@@ -186,26 +192,27 @@
             }, 500);
             
             invitationCard.style.visibility = 'visible';
-            invitationCard.style.opacity = '1';
-
-            // Intenta reproducir la música
-            backgroundMusic.play().then(() => {
-                isMusicPlaying = true;
-                musicToggle.textContent = '🔇';
-            }).catch(e => {
-                console.log("El navegador bloqueó la reproducción automática. El usuario debe activar el sonido manualmente.");
+            invitationCard.classList.add('visible');
+            
+            mostrarPaso(1); // Muestra la nueva introducción de la historia
+            
+            backgroundMusic.play().catch(e => {
+                console.log("Música bloqueada. El usuario debe activar el sonido con el botón.");
                 isMusicPlaying = false;
                 musicToggle.textContent = '🎵';
             });
-
+            if(backgroundMusic.paused === false) {
+                 isMusicPlaying = true;
+                 musicToggle.textContent = '🔇';
+            }
             musicToggle.classList.add('visible');
         });
 
-        capibara.addEventListener('click', () => mostrarPaso(2));
+        capibara.addEventListener('click', () => mostrarPaso(3));
 
         function revisarRespuesta(respuesta) {
             if (respuesta === 'correcta') {
-                mostrarPopup('¡Excelente elección! Valentín se ve genial. ¡Vamos al siguiente paso!', 3);
+                mostrarPopup('¡Excelente elección! Valentín se ve genial.', 4);
             } else {
                 mostrarPopup('Mmm... no creo que a Valentín le guste eso. ¡Intenta de nuevo!');
             }
@@ -214,7 +221,7 @@
         function revisarClave() {
             const claveInput = document.getElementById('inputClave');
             if (claveInput.value.trim().toLowerCase() === 'ema') {
-                mostrarPopup('¡Correcto! ¡Has desbloqueado la ubicación secreta!', 4);
+                mostrarPopup('¡Correcto! ¡Has desbloqueado la ubicación secreta!', 5);
                 startConfetti();
             } else {
                 mostrarPopup('¡Esa no es la palabra secreta! Pista: Es un nombre corto y bonito 😉');
@@ -239,16 +246,15 @@
             }, 300);
         });
 
-        // --- CONTROL DE MÚSICA (LÓGICA CORREGIDA) ---
+        // --- CONTROL DE MÚSICA ---
         musicToggle.addEventListener('click', () => {
             if (isMusicPlaying) {
                 backgroundMusic.pause();
-                musicToggle.textContent = '🎵';
             } else {
                 backgroundMusic.play();
-                musicToggle.textContent = '🔇';
             }
-            isMusicPlaying = !isMusicPlaying; // Invierte el estado
+            isMusicPlaying = !isMusicPlaying;
+            musicToggle.textContent = isMusicPlaying ? '🔇' : '🎵';
         });
 
         // --- SCRIPT DE CONFETI ---
@@ -280,17 +286,16 @@
         }
 
         function drawConfetti() {
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = confettiParticles.length - 1; i >= 0; i--) {
                 const p = confettiParticles[i];
                 p.y += p.speed;
                 p.angle += p.spin;
                 if (p.y > canvas.height + 20) {
-                    confettiParticles.splice(i, 1);
+                    confettiParticles.splice(i, 1, createConfetti());
+                    confettiParticles[confettiParticles.length - 1].y = -10;
                 }
-            }
-            while (confettiParticles.length < 200) {
-                confettiParticles.push(createConfetti());
             }
             confettiParticles.forEach(p => {
                 ctx.save();
