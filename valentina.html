@@ -77,14 +77,13 @@
         .mapa-container{margin-top:20px;border-radius:15px;overflow:hidden;border:3px solid var(--accent-color)}
         .mapa-container iframe{width:100%;height:300px;border:0}
         
-        .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:1001;display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
-        .popup-overlay.activo{opacity:1;pointer-events:auto}
+        .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:1001;display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .3s ease; visibility: hidden;}
+        .popup-overlay.activo{opacity:1;pointer-events:auto; visibility: visible;}
         .popup-container{background-color:var(--popup-bg);border:4px solid var(--popup-border);border-radius:15px;padding:25px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,0.2);transform:scale(.9);transition:transform .3s ease}
         .popup-overlay.activo .popup-container{transform:scale(1)}
         .popup-message{color:var(--popup-text);font-size:1.2em;margin-bottom:20px;margin-top:10px;}
         .popup-button{background-color:var(--accent-color);color:#424242;border:none;border-radius:10px;padding:10px 25px;font-size:1em;cursor:pointer;font-weight:bold;transition:background-color .2s}.popup-button:hover{background-color:#ffd76e}
         
-        /* --- ESTILOS CORREGIDOS PARA LA PANTALLA DE INICIO --- */
         #intro-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:var(--popup-bg);z-index:10000;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transition:opacity 0.5s ease-out;color: var(--text-color);}
         #intro-overlay h2{font-size:2.5em;}
         #start-button{font-family: 'Fredoka One', cursive; font-size:1.5em; padding:15px 30px; border-radius:15px; border:none; background-color:var(--primary-color); color:white; cursor:pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.2s ease;}
@@ -103,17 +102,17 @@
     
     <main class="invitacion">
         <div id="paso1" class="paso">
-            <h1 style="font-size: 2.5em;">Ema Valentina</h1>
+            <h1>Ema Valentina</h1>
             <p>¡Te invito a celebrar mis <strong>5 AÑOS</strong>!</p>
             <div class="capibara-imagen" id="capibara" role="img" aria-label="Ilustración de un capibara" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png');"></div>
             <p><strong>¡Haz clic en Valentín para ayudarlo a llegar!</strong></p>
         </div>
 
         <div id="paso2" class="paso oculto">
-            <h2>Paso 1: ¡Elige el accesorio!</h2>
+            <h2>Paso 1: ¡Prepara la mochila!</h2>
             <p>Valentín quiere verse genial para la fiesta. ¿Qué accesorio debería usar?</p>
             <div class="opciones-container">
-                <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Un sombrero de copa</button>
+                <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Un libro de matemáticas</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('correcta')">Unos lentes de sol cool 🕶️</button>
                 <button class="boton-opcion" onclick="revisarRespuesta('incorrecta')">Una corbata de moño</button>
             </div>
@@ -145,7 +144,7 @@
 
     <button id="music-toggle" class="oculto">🎵</button>
     <audio id="background-music" loop>
-        <source src="https://www.myinstants.com/media/sounds/happy-ukulele-for-kids-no-copyright-music.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-897.mp3" type="audio/mpeg">
     </audio>
     <canvas id="confetti-canvas"></canvas>
 
@@ -171,6 +170,7 @@
         backgroundMusic.volume = 0.3;
 
         let proximoPaso = 0;
+        let isMusicPlaying = false; // Estado para controlar la música
 
         // --- FUNCIONES DE NAVEGACIÓN Y JUEGO ---
         function mostrarPaso(numeroPaso) {
@@ -187,12 +187,17 @@
             
             invitationCard.style.visibility = 'visible';
             invitationCard.style.opacity = '1';
-            
-            // Intentar reproducir música
-            backgroundMusic.play().catch(e => {
-                console.error("Error al reproducir música:", e);
-                // Si falla, el usuario aún tiene el botón de control
+
+            // Intenta reproducir la música
+            backgroundMusic.play().then(() => {
+                isMusicPlaying = true;
+                musicToggle.textContent = '🔇';
+            }).catch(e => {
+                console.log("El navegador bloqueó la reproducción automática. El usuario debe activar el sonido manualmente.");
+                isMusicPlaying = false;
+                musicToggle.textContent = '🎵';
             });
+
             musicToggle.classList.add('visible');
         });
 
@@ -234,15 +239,16 @@
             }, 300);
         });
 
-        // --- CONTROL DE MÚSICA ---
+        // --- CONTROL DE MÚSICA (LÓGICA CORREGIDA) ---
         musicToggle.addEventListener('click', () => {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-                musicToggle.textContent = '🔇';
-            } else {
+            if (isMusicPlaying) {
                 backgroundMusic.pause();
                 musicToggle.textContent = '🎵';
+            } else {
+                backgroundMusic.play();
+                musicToggle.textContent = '🔇';
             }
+            isMusicPlaying = !isMusicPlaying; // Invierte el estado
         });
 
         // --- SCRIPT DE CONFETI ---
@@ -286,7 +292,6 @@
             while (confettiParticles.length < 200) {
                 confettiParticles.push(createConfetti());
             }
-            
             confettiParticles.forEach(p => {
                 ctx.save();
                 ctx.fillStyle = p.color;
