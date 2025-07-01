@@ -11,7 +11,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://elmejorequipo.github.io/invitacion/valentina">
     <meta property="og:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
     <meta name="twitter:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
@@ -50,7 +49,8 @@
         :root{--bg-gradient-start:#a8e6cf;--bg-gradient-end:#dcedc1;--card-bg:#ffffff;--primary-color:#ff8b94;--secondary-color:#63d471;--accent-color:#ffcc5c;--text-color:#5d4037;--input-bg:#f1f1f1; --popup-bg: #fffde7; --popup-border: #fbc02d;}
         body{font-family:'Fredoka One','Comic Sans MS',cursive;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:20px;background:linear-gradient(45deg,var(--bg-gradient-start),var(--bg-gradient-end));background-size:400% 400%;animation:gradientBG 15s ease infinite;color:var(--text-color);box-sizing:border-box;overflow-x:hidden}
         @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-        main.invitacion{background:var(--card-bg);border:5px solid var(--primary-color);border-radius:30px;padding:25px 35px;max-width:500px;width:100%;text-align:center;box-shadow:0 15px 30px rgba(0,0,0,0.15);position:relative;overflow:hidden; animation:fadeInCard 1s .5s ease-out forwards; opacity: 0;}
+        main.invitacion{background:var(--card-bg);border:5px solid var(--primary-color);border-radius:30px;padding:25px 35px;max-width:500px;width:100%;text-align:center;box-shadow:0 15px 30px rgba(0,0,0,0.15);position:relative;overflow:hidden; animation:fadeInCard 1s .5s ease-out forwards; opacity: 0; visibility: hidden;}
+        main.invitacion.visible{visibility: visible;}
         @keyframes fadeInCard{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
         .invitacion::before{content:'🍃';position:absolute;top:10px;left:10px;font-size:40px;animation:wiggle 4s ease-in-out infinite}.invitacion::after{content:'☀️';position:absolute;top:15px;right:15px;font-size:40px;color:var(--accent-color);animation:spin 10s linear infinite}
         @keyframes wiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(10deg)}}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
@@ -71,7 +71,8 @@
         .boton-opcion:hover,.boton-jugar:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.15)}
         .input-secreto{width:80%;padding:12px;border:2px solid #ddd;border-radius:10px;text-align:center;font-size:1.2em;margin-top:10px;background-color:var(--input-bg);color:var(--text-color)}.input-secreto:focus{outline:none;border-color:var(--accent-color)}
         #mensajeFinal{background-color:#e8f5e9;color:#388e3c;padding:20px;border-radius:15px;border:2px solid var(--secondary-color);font-size:1.2em;margin-top:20px}
-        #music-toggle{position:fixed;bottom:15px;right:15px;width:50px;height:50px;background-color:rgba(255,255,255,0.8);border:2px solid var(--primary-color);border-radius:50%;font-size:24px;cursor:pointer;z-index:1000;display:flex;justify-content:center;align-items:center}
+        #music-toggle{position:fixed;bottom:15px;right:15px;width:50px;height:50px;background-color:rgba(255,255,255,0.8);border:2px solid var(--primary-color);border-radius:50%;font-size:24px;cursor:pointer;z-index:1000;display:flex;justify-content:center;align-items:center;opacity:0; transition: opacity 0.5s ease;}
+        #music-toggle.visible{opacity:1;}
         #confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
         .mapa-container{margin-top:20px;border-radius:15px;overflow:hidden;border:3px solid var(--accent-color)}
         .mapa-container iframe{width:100%;height:300px;border:0}
@@ -83,8 +84,9 @@
         .popup-message{color:var(--popup-text);font-size:1.2em;margin-bottom:20px;margin-top:10px;}
         .popup-button{background-color:var(--accent-color);color:#424242;border:none;border-radius:10px;padding:10px 25px;font-size:1em;cursor:pointer;font-weight:bold;transition:background-color .2s}.popup-button:hover{background-color:#ffd76e}
         
-        #intro-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;transition:opacity 0.5s ease-out;}
-        #intro-overlay h2{font-size:2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);}
+        /* --- ESTILOS CORREGIDOS PARA LA PANTALLA DE INICIO --- */
+        #intro-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:var(--popup-bg);z-index:10000;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transition:opacity 0.5s ease-out;color: var(--text-color);}
+        #intro-overlay h2{font-size:2.5em;}
         #start-button{font-family: 'Fredoka One', cursive; font-size:1.5em; padding:15px 30px; border-radius:15px; border:none; background-color:var(--primary-color); color:white; cursor:pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.2s ease;}
         #start-button:hover{transform: scale(1.1);}
 
@@ -92,18 +94,18 @@
     </style>
 </head>
 <body>
-
+    
     <div id="intro-overlay">
         <h2>¡Una aventura te espera!</h2>
         <p>Presiona para comenzar</p>
         <button id="start-button">🎉 Comenzar 🎉</button>
     </div>
     
-    <main class="invitacion" style="visibility: hidden;">
+    <main class="invitacion">
         <div id="paso1" class="paso">
             <h1 style="font-size: 2.5em;">Ema Valentina</h1>
             <p>¡Te invito a celebrar mis <strong>5 AÑOS</strong>!</p>
-            <div class="capibara-imagen" id="capibara" role="img" aria-label="Ilustración de un capibara" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png?raw=true');"></div>
+            <div class="capibara-imagen" id="capibara" role="img" aria-label="Ilustración de un capibara" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png');"></div>
             <p><strong>¡Haz clic en Valentín para ayudarlo a llegar!</strong></p>
         </div>
 
@@ -119,7 +121,7 @@
         
         <div id="paso3" class="paso oculto">
             <h2>Paso 2: ¡Llegó con estilo!</h2>
-             <div class="capibara-imagen" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara02.png?raw=true'); animation: none; cursor: default;"></div>
+             <div class="capibara-imagen" style="background-image: url('https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara02.png'); animation: none; cursor: default;"></div>
             <p>¡Perfecto! Ahora, para encontrar la ubicación, escribe el nombre de la cumpleañera.</p>
             <input type="text" id="inputClave" class="input-secreto" placeholder="Nombre de la cumpleañera...">
             <button class="boton-jugar" style="margin-top: 15px;" onclick="revisarClave()">Revelar Mapa</button>
@@ -133,7 +135,7 @@
                 <strong>Dirección:</strong> B. Villa Warnes | C. Alberto Ostria | N° 3445
             </div>
             <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.278964348633!2d-63.14959402585121!3d-17.77888777931751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7d0f3c55555%3A0x5776f827a58a729e!2sC.%20Alberto%20Ostria%20Guti%C3%A9rrez%203445%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses-419!2s!4v1716301384594!5m2!1ses-419!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.414324393666!2d-63.155700024825316!3d-17.77180498319106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e8093848b8b5%3A0x2a98f7311153a79a!2sC.%20Alberto%20Ostria%20Guti%C3%A9rrez%203445%2C%20Santa%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1719879796859!5m2!1ses!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="mensajeFinal">
                 <p><strong>¡Te esperamos para celebrar!</strong> 🎉</p>
@@ -143,11 +145,11 @@
 
     <button id="music-toggle" class="oculto">🎵</button>
     <audio id="background-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/08/17/audio_313c64c831.mp3" type="audio/mpeg">
+        <source src="https://www.myinstants.com/media/sounds/happy-ukulele-for-kids-no-copyright-music.mp3" type="audio/mpeg">
     </audio>
     <canvas id="confetti-canvas"></canvas>
 
-    <div id="popup-overlay" class="popup-overlay">
+    <div id="popup-overlay" class="popup-overlay oculto">
         <div class="popup-container">
             <p id="popup-message" class="popup-message"></p>
             <button id="popup-button" class="popup-button">Entendido</button>
@@ -155,6 +157,7 @@
     </div>
     
     <script>
+        // --- SELECCIÓN DE ELEMENTOS ---
         const pasos = document.querySelectorAll('.paso');
         const capibara = document.getElementById('capibara');
         const popupOverlay = document.getElementById('popup-overlay');
@@ -169,9 +172,10 @@
 
         let proximoPaso = 0;
 
+        // --- FUNCIONES DE NAVEGACIÓN Y JUEGO ---
         function mostrarPaso(numeroPaso) {
             pasos.forEach((paso, index) => {
-                paso.classList.toggle('oculto', index !== numeroPaso - 1);
+                paso.classList.toggle('oculto', index + 1 !== numeroPaso);
             });
         }
         
@@ -182,22 +186,21 @@
             }, 500);
             
             invitationCard.style.visibility = 'visible';
+            invitationCard.style.opacity = '1';
             
-            // Intentar reproducir música en la primera interacción del usuario
-            if (backgroundMusic.paused) {
-                backgroundMusic.play().catch(e => {
-                    console.log("El navegador bloqueó la reproducción automática. El usuario debe activar el sonido manualmente.");
-                });
-                musicToggle.textContent = '🔇';
-            }
-            musicToggle.classList.remove('oculto');
+            // Intentar reproducir música
+            backgroundMusic.play().catch(e => {
+                console.error("Error al reproducir música:", e);
+                // Si falla, el usuario aún tiene el botón de control
+            });
+            musicToggle.classList.add('visible');
         });
 
         capibara.addEventListener('click', () => mostrarPaso(2));
 
         function revisarRespuesta(respuesta) {
             if (respuesta === 'correcta') {
-                mostrarPopup('¡Excelente elección! Valentín se ve genial. ¡Vamos al siguiente paso!', 2);
+                mostrarPopup('¡Excelente elección! Valentín se ve genial. ¡Vamos al siguiente paso!', 3);
             } else {
                 mostrarPopup('Mmm... no creo que a Valentín le guste eso. ¡Intenta de nuevo!');
             }
@@ -206,27 +209,32 @@
         function revisarClave() {
             const claveInput = document.getElementById('inputClave');
             if (claveInput.value.trim().toLowerCase() === 'ema') {
-                mostrarPopup('¡Correcto! ¡Has desbloqueado la ubicación secreta!', 3);
+                mostrarPopup('¡Correcto! ¡Has desbloqueado la ubicación secreta!', 4);
                 startConfetti();
             } else {
                 mostrarPopup('¡Esa no es la palabra secreta! Pista: Es un nombre corto y bonito 😉');
             }
         }
 
-        function mostrarPopup(mensaje, siguientePasoIndex = 0) {
+        // --- LÓGICA DEL POPUP PERSONALIZADO ---
+        function mostrarPopup(mensaje, pasoSiguiente = 0) {
             popupMessage.textContent = mensaje;
-            popupOverlay.classList.add('activo');
-            proximoPaso = siguientePasoIndex;
+            popupOverlay.classList.remove('oculto');
+            setTimeout(() => popupOverlay.classList.add('activo'), 10);
+            proximoPaso = pasoSiguiente;
         }
 
         popupButton.addEventListener('click', () => {
             popupOverlay.classList.remove('activo');
-            if (proximoPaso > 0) {
-                mostrarPaso(proximoPaso + 1);
-                proximoPaso = 0;
-            }
+             setTimeout(() => {
+                if (proximoPaso > 0) {
+                    mostrarPaso(proximoPaso);
+                    proximoPaso = 0;
+                }
+            }, 300);
         });
 
+        // --- CONTROL DE MÚSICA ---
         musicToggle.addEventListener('click', () => {
             if (backgroundMusic.paused) {
                 backgroundMusic.play();
@@ -237,10 +245,10 @@
             }
         });
 
+        // --- SCRIPT DE CONFETI ---
         const canvas = document.getElementById('confetti-canvas');
         const ctx = canvas.getContext('2d');
         let confettiInterval = null;
-
         const confettiParticles = [];
         const colors = ["#ff8b94", "#63d471", "#ffcc5c", "#a8e6cf", "#ffffff"];
 
@@ -248,11 +256,7 @@
             if (confettiInterval) return;
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            
-            for (let i = 0; i < 200; i++) {
-                confettiParticles.push(createConfetti());
-            }
-            
+            for (let i = 0; i < 200; i++) { confettiParticles.push(createConfetti()); }
             confettiInterval = setInterval(drawConfetti, 1000 / 60);
         }
 
@@ -260,7 +264,7 @@
             return {
                 x: Math.random() * canvas.width,
                 y: Math.random() * -canvas.height,
-                size: Math.random() * 5 + 5,
+                size: Math.random() * 8 + 4,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 speed: Math.random() * 3 + 2,
                 opacity: Math.random() * 0.5 + 0.5,
@@ -271,13 +275,14 @@
 
         function drawConfetti() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            confettiParticles.forEach((p, i) => {
+            for (let i = confettiParticles.length - 1; i >= 0; i--) {
+                const p = confettiParticles[i];
                 p.y += p.speed;
                 p.angle += p.spin;
                 if (p.y > canvas.height + 20) {
                     confettiParticles.splice(i, 1);
                 }
-            });
+            }
             while (confettiParticles.length < 200) {
                 confettiParticles.push(createConfetti());
             }
@@ -293,6 +298,5 @@
             });
         }
     </script>
-
 </body>
 </html>
