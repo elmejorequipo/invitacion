@@ -147,7 +147,7 @@
                 <strong>Dirección:</strong> B. Villa Warnes | C. Alberto Ostria | N° 3445
             </div>
             <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.089531853177!2d-63.1959826851194!3d-17.75239998786963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e816a7f3f6c5%3A0x633402436852a321!2sC.%20Alberto%20Ostria%203445%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1689021945123!5m2!1ses!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d627.5624423082478!2d-63.19731165368348!3d-17.8155445892011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sbo!4v1751334982131!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="mensajeFinal">
                 <p><strong>¡Te esperamos para celebrar!</strong> 🎉</p>
@@ -278,7 +278,7 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             for (let i = 0; i < 200; i++) { confettiParticles.push(createConfetti()); }
-            confettiInterval = setInterval(drawConfetti, 1000 / 45); // Ritmo más lento
+            confettiInterval = setInterval(drawConfetti, 1000 / 45);
         }
 
         function createConfetti() {
@@ -287,7 +287,7 @@
                 y: Math.random() * -canvas.height,
                 size: Math.random() * 8 + 4,
                 color: colors[Math.floor(Math.random() * colors.length)],
-                speed: Math.random() * 2 + 1, // Velocidad más lenta
+                speed: Math.random() * 2 + 1,
                 opacity: Math.random() * 0.5 + 0.5,
                 angle: Math.random() * 2 * Math.PI,
                 spin: (Math.random() - 0.5) * 0.2
