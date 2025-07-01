@@ -6,15 +6,22 @@
     <title>¡La Gran Aventura de Cumpleaños de Ema Valentina!</title>
     <meta name="description" content="¡Una misión te espera! Ayuda al capibara Valentín a llegar a la fiesta de 5 años de Ema Valentina. Domingo 6 de julio, 4:30 PM.">
     <link rel="canonical" href="https://elmejorequipo.github.io/invitacion/valentina">
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+
     <meta property="og:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
     <meta property="og:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://elmejorequipo.github.io/invitacion/valentina">
     <meta property="og:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+    <meta property="og:site_name" content="Invitación de Cumpleaños">
+    <meta property="og:locale" content="es_LA">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="¡Aventura de Cumpleaños de Ema Valentina!">
     <meta name="twitter:description" content="¡Estás invitado a celebrar los 5 años de Ema! Resuelve las pistas y acompáñanos en la fiesta.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/capibara01.png">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,12 +65,12 @@
         p{font-size:1.1em;line-height:1.5}
         strong{color:var(--primary-color)}
         
-        .capibara-imagen{width:200px;height:200px;margin:20px auto 15px;background-size:contain;background-repeat:no-repeat;background-position:center;cursor:pointer;transition:transform .3s ease-in-out;animation:bobbing 3s ease-in-out infinite}
-        @keyframes bobbing{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+        .capibara-imagen{width:200px;height:200px;margin:20px auto 15px;background-size:contain;background-repeat:no-repeat;background-position:center;cursor:pointer;transition:transform .3s ease-in-out;animation:bobbing 4s ease-in-out infinite}
+        @keyframes bobbing{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
         .capibara-imagen:hover{transform:scale(1.1) rotate(3deg);animation-play-state:paused}
         
-        .paso{transition:opacity .5s ease-out,transform .5s ease-out,max-height .8s ease-in-out;max-height:800px;opacity:1;transform:translateY(0);overflow:hidden}
-        .paso.oculto{opacity:0;max-height:0;transform:translateY(20px);pointer-events:none}
+        .paso{transition:opacity .7s ease-out,transform .7s ease-out,max-height .8s ease-in-out;max-height:800px;opacity:1;transform:translateY(0);overflow:hidden}
+        .paso.oculto{opacity:0;max-height:0;transform:translateY(15px);pointer-events:none}
         .pista{background-color:#fff9e6;color:var(--text-color);padding:15px;border-radius:15px;margin:20px 0;border:2px dashed var(--accent-color);font-size:1.1em;line-height:1.6}
         .opciones-container{display:flex;flex-direction:column;gap:10px;margin-top:15px}
         .boton-opcion,.boton-jugar{background:linear-gradient(45deg,var(--secondary-color),#81c784);color:white;padding:12px 20px;border:none;border-radius:50px;font-size:1.1em;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(0,0,0,.1)}
@@ -76,9 +83,9 @@
         .mapa-container{margin-top:20px;border-radius:15px;overflow:hidden;border:3px solid var(--accent-color)}
         .mapa-container iframe{width:100%;height:300px;border:0}
         
-        .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:1001;display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .3s ease; visibility: hidden;}
+        .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:1001;display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .5s ease; visibility: hidden;}
         .popup-overlay.activo{opacity:1;pointer-events:auto; visibility: visible;}
-        .popup-container{background-color:var(--popup-bg);border:4px solid var(--popup-border);border-radius:15px;padding:25px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,0.2);transform:scale(.9);transition:transform .3s ease}
+        .popup-container{background-color:var(--popup-bg);border:4px solid var(--popup-border);border-radius:15px;padding:25px;text-align:center;box-shadow:0 8px 16px rgba(0,0,0,0.2);transform:scale(.9);transition:transform .5s ease}
         .popup-overlay.activo .popup-container{transform:scale(1)}
         .popup-message{color:var(--popup-text);font-size:1.2em;margin-bottom:20px;margin-top:10px;}
         .popup-button{background-color:var(--accent-color);color:#424242;border:none;border-radius:10px;padding:10px 25px;font-size:1em;cursor:pointer;font-weight:bold;transition:background-color .2s}.popup-button:hover{background-color:#ffd76e}
@@ -140,7 +147,7 @@
                 <strong>Dirección:</strong> B. Villa Warnes | C. Alberto Ostria | N° 3445
             </div>
             <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.414324393666!2d-63.155700024825316!3d-17.77180498319106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e8093848b8b5%3A0x2a98f7311153a79a!2sC.%20Alberto%20Ostria%20Guti%C3%A9rrez%203445%2C%20Santa%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1719879796859!5m2!1ses!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.089531853177!2d-63.1959826851194!3d-17.75239998786963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e816a7f3f6c5%3A0x633402436852a321!2sC.%20Alberto%20Ostria%203445%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1689021945123!5m2!1ses!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="mensajeFinal">
                 <p><strong>¡Te esperamos para celebrar!</strong> 🎉</p>
@@ -150,7 +157,7 @@
 
     <button id="music-toggle" class="oculto">🎵</button>
     <audio id="background-music" loop>
-        <source src="https://raw.githubusercontent.com/elmejorequipo/invitacion/main/Feliz%20Cumple%20Valentina.mp3" type="audio/mpeg">
+        <source src="https://github.com/elmejorequipo/invitacion/raw/refs/heads/main/Feliz%20Cumple%20Valentina.mp3" type="audio/mpeg">
     </audio>
     <canvas id="confetti-canvas"></canvas>
 
@@ -194,17 +201,18 @@
             invitationCard.style.visibility = 'visible';
             invitationCard.classList.add('visible');
             
-            mostrarPaso(1); // Muestra la nueva introducción de la historia
+            mostrarPaso(1);
             
-            backgroundMusic.play().catch(e => {
+            // Intenta reproducir la música
+            backgroundMusic.play().then(() => {
+                isMusicPlaying = true;
+                musicToggle.textContent = '🔇';
+            }).catch(e => {
                 console.log("Música bloqueada. El usuario debe activar el sonido con el botón.");
                 isMusicPlaying = false;
                 musicToggle.textContent = '🎵';
             });
-            if(backgroundMusic.paused === false) {
-                 isMusicPlaying = true;
-                 musicToggle.textContent = '🔇';
-            }
+
             musicToggle.classList.add('visible');
         });
 
@@ -239,11 +247,12 @@
         popupButton.addEventListener('click', () => {
             popupOverlay.classList.remove('activo');
              setTimeout(() => {
+                popupOverlay.classList.add('oculto');
                 if (proximoPaso > 0) {
                     mostrarPaso(proximoPaso);
                     proximoPaso = 0;
                 }
-            }, 300);
+            }, 500);
         });
 
         // --- CONTROL DE MÚSICA ---
@@ -269,7 +278,7 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             for (let i = 0; i < 200; i++) { confettiParticles.push(createConfetti()); }
-            confettiInterval = setInterval(drawConfetti, 1000 / 60);
+            confettiInterval = setInterval(drawConfetti, 1000 / 45); // Ritmo más lento
         }
 
         function createConfetti() {
@@ -278,7 +287,7 @@
                 y: Math.random() * -canvas.height,
                 size: Math.random() * 8 + 4,
                 color: colors[Math.floor(Math.random() * colors.length)],
-                speed: Math.random() * 3 + 2,
+                speed: Math.random() * 2 + 1, // Velocidad más lenta
                 opacity: Math.random() * 0.5 + 0.5,
                 angle: Math.random() * 2 * Math.PI,
                 spin: (Math.random() - 0.5) * 0.2
